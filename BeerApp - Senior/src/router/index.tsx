@@ -6,11 +6,14 @@ import BeerList from '../views/BeerList';
 import Beer from '../views/Beer';
 import Footer from '../components/Footer';
 import Menu from '../components/Menu';
+import { FavoriteBreweriesProvider } from '../context/FavoriteBreweriesContext';
+
 
 const Router = () => (
   <BrowserRouter>
     <Menu>
       <Offline />
+      <FavoriteBreweriesProvider>
       <Routes>
         <Route index element={<Home />} />
         <Route path='beer'>
@@ -19,6 +22,7 @@ const Router = () => (
         </Route>
         <Route path='*' element={<NotFound />} />
       </Routes>
+      </FavoriteBreweriesProvider>
       <Footer />
     </Menu>
   </BrowserRouter>
