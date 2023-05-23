@@ -14,6 +14,8 @@ import PublicIcon from '@mui/icons-material/Public';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import PhoneIcon from '@mui/icons-material/Phone';
 
+import FavoriteBeerIcon from '../../components/FavoriteBeerIcon';
+
 import { Beer as IBeer } from '../../types';
 import TYPE_DESCRIPTIONS from '../../types/typeDescriptions';
 import { fetchData } from './utils';
@@ -45,6 +47,7 @@ const Beer = () => {
             <Typography component="h1" variant="h4">{beer?.name}</Typography>
             <Typography variant="subtitle1">{beer && beer.brewery_type && TYPE_DESCRIPTIONS[beer.brewery_type]}</Typography>
           </div>
+          <FavoriteBeerIcon beer={beer}/>
         </div>
         <Box sx={{ mt: 2}}>
         <List dense={true}>

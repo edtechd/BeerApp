@@ -1,13 +1,15 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { fetchData } from './utils';
 import { Beer } from '../../types';
 import { Link as RouterLink } from 'react-router-dom';
 import { Button, Checkbox, Paper, TextField, Link } from '@mui/material';
+import { FavoriteBreweriesContext } from '../../context/FavoriteBreweriesContext';
 import styles from './Home.module.css';
 
 const Home = () => {
   const [beerList, setBeerList] = useState<Array<Beer>>([]);
-  const [savedList, setSavedList] = useState<Array<Beer>>([]);
+  const { favoriteBreweries: savedList }: { favoriteBreweries: Beer[] } = useContext(FavoriteBreweriesContext);
+
 
   // eslint-disable-next-line
   useEffect(fetchData.bind(this, setBeerList), []);
