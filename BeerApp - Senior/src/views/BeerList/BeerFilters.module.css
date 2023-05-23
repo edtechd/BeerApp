@@ -1,0 +1,13 @@
+.filterSection {
+  margin-bottom: 20px;
+}
+
+.filterHeader {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.filterHeaderTitle {
+  margin-right: 10px;
+}
